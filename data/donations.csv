@@ -1,0 +1,3 @@
+donation_id,donor_id,food_name,category,quantity,unit,expiry_date,pickup_location,pickup_from,pickup_until,notes,status,cancel_reason,created_at,updated_at,city,ngo_id
+DON-0001,USR-0002,habebajdjdid,Bakery,1.00,liters,2026-10-15,r3oijoijqoifoiqoif,09:00,17:00,,Pending,,2026-10-14 16:12:13,2026-10-14 16:12:13,Cairo,
+DON-0002,USR-0003,habebsa,Cooked Meals,1.00,kg,2026-10-15,hgvgvyfytfyt,09:00,17:00,,Pending,,2026-10-14 16:25:18,2026-10-14 16:25:18,Cairo,

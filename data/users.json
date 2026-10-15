@@ -1,0 +1,36 @@
+[
+  {
+    "user_id": "USR-0001",
+    "full_name": "System Admin",
+    "email": "admin@foodrescue.org",
+    "phone": "01000000000",
+    "password": "Admin@12345",
+    "created_at": "2026-10-14 16:07:53",
+    "is_active": true,
+    "role": "admin"
+  },
+  {
+    "user_id": "USR-0002",
+    "full_name": "habeba",
+    "email": "habeba@gmail.com",
+    "phone": "01156102316",
+    "password": "Habouba#67",
+    "created_at": "2026-10-14 16:10:39",
+    "is_active": true,
+    "role": "donor",
+    "donor_type": "Individual",
+    "organization": "test"
+  },
+  {
+    "user_id": "USR-0003",
+    "full_name": "test rwsru",
+    "email": "habeba1@gmail.com",
+    "phone": "01156102316",
+    "password": "Habouba#67",
+    "created_at": "2026-10-14 16:23:56",
+    "is_active": true,
+    "role": "donor",
+    "donor_type": "Individual",
+    "organization": "test"
+  }
+]

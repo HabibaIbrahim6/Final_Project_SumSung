@@ -1,0 +1,111 @@
+[
+  {
+    "id": 1,
+    "name": "Cairo Food Bank",
+    "location": "Cairo",
+    "pickup_time_minutes": 20,
+    "accepted_food_types": [
+      "Cooked Meals",
+      "Bakery",
+      "Fruits & Vegetables",
+      "Dairy",
+      "Packaged Food",
+      "Beverages",
+      "Meat & Poultry",
+      "Other"
+    ],
+    "remaining_capacity": {
+      "kg": 300,
+      "portions": 400,
+      "liters": 100,
+      "boxes": 200,
+      "items": 300
+    }
+  },
+  {
+    "id": 2,
+    "name": "Giza Hope Kitchen",
+    "location": "Giza",
+    "pickup_time_minutes": 15,
+    "accepted_food_types": [
+      "Cooked Meals",
+      "Dairy",
+      "Fruits & Vegetables",
+      "Packaged Food",
+      "Beverages"
+    ],
+    "remaining_capacity": {
+      "kg": 200,
+      "portions": 150,
+      "liters": 60,
+      "boxes": 80
+    }
+  },
+  {
+    "id": 3,
+    "name": "Fayoum Relief",
+    "location": "Fayoum",
+    "pickup_time_minutes": 35,
+    "accepted_food_types": [
+      "Cooked Meals",
+      "Fruits & Vegetables",
+      "Bakery",
+      "Packaged Food"
+    ],
+    "remaining_capacity": {
+      "kg": 250,
+      "portions": 120,
+      "boxes": 60,
+      "items": 150
+    }
+  },
+  {
+    "id": 4,
+    "name": "Bread for All",
+    "location": "Cairo",
+    "pickup_time_minutes": 10,
+    "accepted_food_types": [
+      "Bakery"
+    ],
+    "remaining_capacity": {
+      "items": 200,
+      "kg": 60,
+      "boxes": 40
+    }
+  },
+  {
+    "id": 5,
+    "name": "Alex Food Share",
+    "location": "Alexandria",
+    "pickup_time_minutes": 30,
+    "accepted_food_types": [
+      "Cooked Meals",
+      "Bakery",
+      "Fruits & Vegetables",
+      "Dairy",
+      "Packaged Food"
+    ],
+    "remaining_capacity": {
+      "kg": 200,
+      "portions": 150,
+      "liters": 50,
+      "boxes": 80
+    }
+  },
+  {
+    "id": 6,
+    "name": "test NGo",
+    "location": "Cairo",
+    "pickup_time_minutes": 20,
+    "accepted_food_types": [
+      "Bakery"
+    ],
+    "remaining_capacity": {
+      "kg": 100.0,
+      "portions": 0.0,
+      "liters": 0.0,
+      "boxes": 0.0,
+      "items": 0.0
+    }
+  }
+]
