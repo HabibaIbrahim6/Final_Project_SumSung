@@ -21,7 +21,8 @@ max_quantity = 10000
 
 donation_fields = ["donation_id", "donor_id", "food_name", "category", "quantity", "unit",
                    "expiry_date", "pickup_location", "pickup_from", "pickup_until", "notes",
-                   "status", "cancel_reason", "created_at", "updated_at", "city", "ngo_id"]
+                   "status", "cancel_reason", "created_at", "updated_at", "city", "ngo_id", "created_at", "updated_at", "city", "ngo_id",
+                   "allocated_at", "delivered_at"]
 
 default_admin = {"full_name": "System Admin", "email": "admin@foodrescue.org",
                  "phone": "01000000000", "password": "Admin@12345"}
