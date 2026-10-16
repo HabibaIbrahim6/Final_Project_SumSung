@@ -1,6 +1,7 @@
 import streamlit as st
 
 import allocation_pages
+import analytics_pages
 import donation_pages
 import NGO_pages
 import user_pages
@@ -17,6 +18,8 @@ page_registry = {
     "admin_ngos": ("Admin: NGO Management", NGO_pages.admin_ngos_page),
     "ngo_dashboard": ("NGO Dashboard", NGO_pages.ngo_dashboard_page),
     "ngo_profile": ("NGO Profile", NGO_pages.ngo_profile_page),
+    "analytics": ("Analytics", analytics_pages.analytics_page),
+    "reports": ("Reports", analytics_pages.reports_page),
 }
 
 
