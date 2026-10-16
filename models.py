@@ -105,7 +105,9 @@ class Donation:
     def __init__(self, donation_id, donor_id, food_name, category, quantity, unit,
                  expiry_date, pickup_location, pickup_from, pickup_until, notes="",
                  status="Pending", cancel_reason="", created_at=None, updated_at=None,
-                 city="Cairo", ngo_id=""):
+                 city="Cairo", ngo_id="", allocated_at="", delivered_at=""):
+        self.allocated_at = allocated_at or ""
+        self.delivered_at = delivered_at or ""
         self.donation_id = donation_id
         self.donor_id = donor_id
         self.food_name = food_name
