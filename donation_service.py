@@ -151,6 +151,13 @@ class DonationService:
         if ngo_id is not None:
             donation.ngo_id = str(ngo_id)
         donation.updated_at = now_text()
+        if donation.status == "Allocated":
+            donation.allocated_at = donation.updated_at
+        elif donation.status == "Delivered":
+            donation.delivered_at = donation.updated_at
+        elif donation.status == "Pending":          # an allocation was undone
+            donation.allocated_at = ""
+            donation.delivered_at = ""
         self.save()
         return donation
 
