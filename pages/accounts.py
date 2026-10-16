@@ -17,7 +17,10 @@ role_choices = {"Donor (restaurant, shop, individual)": "donor", "NGO representa
 
 def login_register_page():
     show_flashes()
-    hero("Food Rescue Coordinator", "Connect surplus food with the NGOs that need it before it expires.")
+    hero(
+        "Welcome to our Food Rescue Coordinator app!",
+        "Connect surplus food with the NGOs that need it before it expires.",
+    )
     login_tab, register_tab = st.tabs(["Login", "Register"])
     with login_tab:
         show_login_form()

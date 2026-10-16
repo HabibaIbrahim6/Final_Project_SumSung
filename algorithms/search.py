@@ -9,7 +9,7 @@ class Search:
             if donation["id"] == donation_id:
                 return donation
         return None
-
+    #the Time Complexity of the Binary  Search O( log n )
     def binary_search(self, donations, donation_id):
         self.comparisons = 0
         left, right = 0, len(donations) - 1

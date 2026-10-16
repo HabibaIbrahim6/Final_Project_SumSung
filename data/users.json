@@ -32,5 +32,40 @@
     "role": "donor",
     "donor_type": "Individual",
     "organization": "test"
+  },
+  {
+    "user_id": "USR-0004",
+    "full_name": "test rwsru",
+    "email": "habeba12@gmail.com",
+    "phone": "01156102316",
+    "password": "Habouba#672005",
+    "created_at": "2026-10-15 23:12:31",
+    "is_active": true,
+    "role": "donor",
+    "donor_type": "Individual",
+    "organization": "test"
+  },
+  {
+    "user_id": "USR-0005",
+    "full_name": "test rwsru",
+    "email": "habeba123@gmail.com",
+    "phone": "01156102316",
+    "password": "Habouba#672005",
+    "created_at": "2026-10-16 12:22:47",
+    "is_active": true,
+    "role": "donor",
+    "donor_type": "Individual",
+    "organization": "test"
+  },
+  {
+    "user_id": "USR-0006",
+    "full_name": "testwqefnwedf",
+    "email": "habeba23@gmail.com",
+    "phone": "01156102316",
+    "password": "Habouba#672005",
+    "created_at": "2026-10-16 12:27:21",
+    "is_active": true,
+    "role": "ngo",
+    "ngo_id": ""
   }
 ]

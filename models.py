@@ -40,7 +40,7 @@ class Donor(User):
     label = config.role_labels["donor"]
     permissions = {"create_donation", "edit_own_donation", "cancel_own_donation",
                    "view_own_donations"}
-    pages = ("create_donation", "my_donations")
+    pages = ("create_donation", "my_donations", "impact_report")
 
     def __init__(self, user_id, full_name, email, phone, password, created_at=None,
                  is_active=True, donor_type="Other", organization=""):
@@ -57,7 +57,7 @@ class NGOUser(User):
     role = "ngo"
     label = config.role_labels["ngo"]
     permissions = {"manage_ngo_profile", "view_eligible_donations", "respond_to_offers"}
-    pages = ("ngo_dashboard", "ngo_profile")
+    pages = ("ngo_dashboard", "ngo_profile", "tracking", "impact_report")
 
     def __init__(self, user_id, full_name, email, phone, password, created_at=None,
                  is_active=True, ngo_id=""):
@@ -70,7 +70,8 @@ class Coordinator(User):
     label = config.role_labels["coordinator"]
     permissions = {"view_all_donations", "manage_allocations", "manage_distribution",
                    "view_analytics"}
-    pages = ("my_donations", "explorer", "smart_allocation")
+    pages = ("my_donations", "explorer", "smart_allocation", "tracking",
+             "analytics", "impact_report")
 
 
 class AdminUser(Coordinator):
@@ -78,7 +79,12 @@ class AdminUser(Coordinator):
     label = config.role_labels["admin"]
     permissions = Coordinator.permissions | {"manage_users", "manage_ngos", "cancel_any_donation",
                                              "approve_allocations"}
-    pages = Coordinator.pages + ("admin_allocations", "admin_users", "admin_ngos")
+    pages = Coordinator.pages + (
+        "admin_allocations",
+        "admin_distributions",
+        "admin_users",
+        "admin_ngos",
+    )
 
 
 user_classes = {"donor": Donor, "ngo": NGOUser, "coordinator": Coordinator, "admin": AdminUser}

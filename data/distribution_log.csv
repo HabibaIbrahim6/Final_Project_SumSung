@@ -1,0 +1,4 @@
+distribution_id,timestamp,from_status,to_status,note
+DIS-0001,2026-10-16 12:32:45,,proposed,Distribution created
+DIS-0001,2026-10-16 12:32:45,proposed,confirmed,Imported from the approved allocation.
+DIS-0001,2026-10-16 12:40:16,confirmed,in_transit,

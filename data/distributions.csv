@@ -1,0 +1,2 @@
+distribution_id,donation_id,ngo_id,allocated_quantity_kg,delivered_quantity_kg,allocated_at,delivered_at,status
+DIS-0001,DON-0004,1,1.0,0.0,2026-10-16 12:32:45,,in_transit

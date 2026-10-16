@@ -7,7 +7,14 @@ import config
 from algorithms.hash_table import HashTable
 from algorithms.merge_sort import MergeSort
 from algorithms.search import Search
-from session import flash, get_allocation_service, require_access, show_flashes
+from session import (
+    cancel_tracking_for_reversed_allocation,
+    flash,
+    get_allocation_service,
+    get_tracking_service,
+    require_access,
+    show_flashes,
+)
 from ui import format_minutes, hero, urgency_label
 from validators import FoodRescueError
 
@@ -36,7 +43,7 @@ def explorer_page():
 
     items = allocation.all_items()
     if not items:
-        st.info("No donations yet.")
+        st.info("No donations hyet.")
         return
 
     pending = [i for i in items if i["status"] == "Pending"]
@@ -291,6 +298,7 @@ def admin_allocations_page():
                 except FoodRescueError as error:
                     st.error(str(error))
                 else:
+                    get_tracking_service()
                     flash("success", f"{ref} allocated to {ngo['name']}.")
                     st.rerun()
             if col2.button("Reject", key="reject_" + ref):
@@ -316,6 +324,7 @@ def admin_allocations_page():
             if st.button("Undo last allocation"):
                 try:
                     last = allocation.undo_last(admin)
+                    cancel_tracking_for_reversed_allocation(last["ref"])
                 except FoodRescueError as error:
                     st.error(str(error))
                 else:

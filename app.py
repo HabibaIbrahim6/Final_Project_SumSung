@@ -1,28 +1,29 @@
 import streamlit as st
 
-import allocation_pages
-import donation_pages
-import NGO_pages
-import user_pages
+from pages import accounts, allocation, analytics_pages, donations, ngo, tracking
 from session import get_current_user, logout
 from ui import ICON, LOGO, inject_css
 
 page_registry = {
-    "create_donation": ("Create Donation", donation_pages.create_donation_page),
-    "my_donations": ("My Donations", donation_pages.my_donations_page),
-    "explorer": ("Donations Explorer", allocation_pages.explorer_page),
-    "smart_allocation": ("Smart Allocation", allocation_pages.smart_allocation_page),
-    "admin_allocations": ("Admin: Allocations", allocation_pages.admin_allocations_page),
-    "admin_users": ("Admin: User Management", user_pages.admin_users_page),
-    "admin_ngos": ("Admin: NGO Management", NGO_pages.admin_ngos_page),
-    "ngo_dashboard": ("NGO Dashboard", NGO_pages.ngo_dashboard_page),
-    "ngo_profile": ("NGO Profile", NGO_pages.ngo_profile_page),
+    "create_donation": ("Create Donation", donations.create_donation_page),
+    "my_donations": ("My Donations", donations.my_donations_page),
+    "explorer": ("Donations Explorer", allocation.explorer_page),
+    "smart_allocation": ("Smart Allocation", allocation.smart_allocation_page),
+    "admin_allocations": ("Admin: Allocations", allocation.admin_allocations_page),
+    "admin_users": ("Admin: User Management", accounts.admin_users_page),
+    "admin_ngos": ("Admin: NGO Management", ngo.admin_ngos_page),
+    "ngo_dashboard": ("NGO Dashboard", ngo.ngo_dashboard_page),
+    "ngo_profile": ("NGO Profile", ngo.ngo_profile_page),
+    "tracking": ("Delivery Tracking", tracking.tracking_page),
+    "admin_distributions": ("Admin: Distributions", tracking.admin_distributions_page),
+    "analytics": ("Impact Analytics", analytics_pages.analytics_page),
+    "impact_report": ("Impact Reports", analytics_pages.reports_page),
 }
 
 
 def build_navigation(user):
     if user is None:
-        login_page = st.Page(user_pages.login_register_page, title="Login / Register",
+        login_page = st.Page(accounts.login_register_page, title="Welcome",
                              url_path="login", default=True)
         return st.navigation([login_page])
 
@@ -35,7 +36,7 @@ def build_navigation(user):
             title = "All Donations"
         pages.append(st.Page(function, title=title, url_path=key))
     if not pages:
-        pages.append(st.Page(user_pages.login_register_page, title="Home", url_path="home"))
+        pages.append(st.Page(accounts.login_register_page, title="Home", url_path="home"))
 
     with st.sidebar:
         st.write(user.welcome_message())

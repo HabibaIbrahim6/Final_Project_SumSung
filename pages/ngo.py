@@ -74,16 +74,8 @@ def ngo_dashboard_page():
                 f"{donation.quantity:g} {donation.unit} · {donation.city} · "
                 f"Status: **{donation.status}**"
             )
-            if donation.status == "Allocated" and action.button(
-                "Mark delivered", key=f"delivered_{donation.donation_id}"
-            ):
-                try:
-                    allocation.mark_delivered(user, donation.donation_id)
-                except FoodRescueError as error:
-                    st.error(str(error))
-                else:
-                    flash("success", f"{donation.donation_id} marked as delivered.")
-                    st.rerun()
+            if donation.status == "Allocated":
+                action.caption("Update delivery status from the Delivery Tracking page.")
 
 
 def ngo_profile_page():

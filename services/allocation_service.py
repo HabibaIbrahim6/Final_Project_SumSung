@@ -185,6 +185,23 @@ class AllocationService:
             )
         return self.donation_service.set_status(ref, "Delivered")
 
+    def release_assignment(self, actor, ref):
+        check_permission(actor, "approve_allocations")
+        donation = self.donation_service.get(ref)
+        if donation.status != "Allocated":
+            raise InvalidStateError(
+                f"Donation {donation.donation_id} is {donation.status} and cannot be released."
+            )
+        ngo = self.ngo_by_id(donation.ngo_id)
+        self.greedy.restore(ngo, donation.unit, donation.quantity)
+        self.donation_service.set_status(ref, "Pending", "")
+        self.save_ngos()
+        self.history.items = [entry for entry in self.history.items if entry["ref"] != ref]
+        for proposal in self.proposals:
+            if proposal["ref"] == ref and proposal["status"] == "Approved":
+                proposal["status"] = "Reverted"
+        return donation
+
     def all_items(self):
         self.donation_service.expire_overdue()
         return [to_item(d) for d in self.donation_service.all_donations()]
