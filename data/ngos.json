@@ -107,5 +107,21 @@
       "boxes": 0.0,
       "items": 0.0
     }
+  },
+  {
+    "id": 7,
+    "name": "test",
+    "location": "Cairo",
+    "pickup_time_minutes": 20,
+    "accepted_food_types": [
+      "Bakery"
+    ],
+    "remaining_capacity": {
+      "kg": 100.0,
+      "portions": 0.0,
+      "liters": 0.0,
+      "boxes": 0.0,
+      "items": 0.0
+    }
   }
 ]
